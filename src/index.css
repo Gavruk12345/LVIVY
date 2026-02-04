@@ -1,0 +1,146 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: 100%; 
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.app-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+}
+
+.top-square {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background-color: #b67455; 
+  border-radius: 20px;
+  border : 5px solid #8c5135;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease , border 0.3s ease;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.photo-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 80px;
+    font-family: "TrajanPro-Regular", sans-serif;
+    font-weight: 1200;
+    text-align: center;
+    z-index: 15;
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+@font-face {
+    font-family: "TrajanPro-Regular";
+    src: url("./assets/TrajanPro-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Контейнер для пошуку — центр на екрані */
+.search-wrapper {
+  position: absolute;
+  top: 450px;            /* або змінити на 50% + translate(-50%) для центру */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  width: 660px;          /* ширина wrapper */
+  text-align: center;    /* центр контенту всередині */
+}
+
+/* Сам input — фон, бортик, округлість */
+.search-input {
+  width: 100%;           /* завжди заповнює wrapper */
+  padding: 16px 22px;
+  font-size: 18px;
+  font-family: "MyFont", sans-serif;
+
+  background: #f8d1b8;       /* світлий cinnabon */
+  color: #5a3a2b;
+
+  border: 2px solid #b67455;
+  border-radius: 30px;
+
+  outline: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+
+.search-input:focus {
+  border-color: #8c5135;
+  background: #fff7f2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background: #5a3a2b;  /* світлий cinnabon */
+  text-align: center;
+  position: absolute;    /* якщо хочеш завжди внизу екрану */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center; /* центр ряду */
+  gap: 40px;              /* відстань між посиланнями */
+  flex-wrap: wrap;        /* перенос рядка на мобілках */
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "MyFont", sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #efbba3; /* підсвічування при наведенні */
+}
